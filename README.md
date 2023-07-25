@@ -1,4 +1,19 @@
+# App Contact
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+
+This is a contact application which is also made using the rest api from [Heroku](https://www.heroku.com/contact).
+This application uses several tools/libraries, including:
+
+- [Redux](https://redux.js.org/introduction/getting-started),
+- [Redux-Saga](https://redux-saga.js.org/docs/introduction/GettingStarted),
+- [React-navigation](https://reactnavigation.org/docs/redux-integration),
+- [Axios](https://axios-http.com/docs/intro),
+- [Reac-native Config](https://www.npmjs.com/package/react-native-config),
+- [Flash messages](https://www.npmjs.com/package/react-native-flash-message),
+- [Imagepicker](https://github.com/react-native-image-picker),
+- [Vector icons](https://oblador.github.io/react-native-vector-icons),
+- [Prop-types](https://www.npmjs.com/package/prop-types)
 
 ## Getting Started
 
