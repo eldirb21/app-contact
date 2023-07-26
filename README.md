@@ -59,4 +59,15 @@ If everything is set up _correctly_, you should see your new app running in your
 
 ### Congratulations! :tada:
 
-You've successfully run and modified your React Native App. :partying_face:
+You've successfully run.
+
+## Screen App Test
+
+<p align="center">
+    <img src="AppScreens/contact-list.png" width="30%"> 
+    <img src="AppScreens/contact-add.png" width="30%"> 
+    <img src="AppScreens/upload-img.png" width="30%" >
+    <img src="AppScreens/contact-edit.png" width="30%" >
+    <img src="AppScreens/toast-alert.png" width="30%" >
+    <img src="AppScreens/submit-alert.png" width="30%" >
+</p>

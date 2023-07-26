@@ -62,6 +62,7 @@ const ContactForm = ({visible, onClose, selectItem, onSave, ...props}) => {
                   }`,
                 )}
                 avatar={inputs.photo}
+                onUpload={val => handleInputChange(val, 'photo')}
               />
             </View>
             <Textinputs

@@ -2,6 +2,7 @@ import React from 'react';
 import {View, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import Func from '../../utils/func';
 import {Avatar, Icons, Texts} from '../../components';
+import {colors} from '../../utils';
 
 const ContactItem = ({data, loading, onEdit, onDelete}) => {
   return (
@@ -15,7 +16,7 @@ const ContactItem = ({data, loading, onEdit, onDelete}) => {
         <View style={styles.subItem}>
           <Texts
             style={styles.name}>{`${data?.firstName} ${data?.lastName}`}</Texts>
-          <Texts>{'Age ' + data.age}</Texts>
+          <Texts style={styles.age}>{'Age ' + data.age}</Texts>
         </View>
         <View style={styles.subAction}>
           <TouchableOpacity
@@ -52,6 +53,11 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '600',
     textTransform: 'capitalize',
+    color: colors.colorBlack,
+  },
+  age: {
+    fontWeight: '500',
+    color: colors.borderGrayColor,
   },
   subAction: {
     flexDirection: 'row',

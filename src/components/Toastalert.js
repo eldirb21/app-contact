@@ -11,6 +11,7 @@ const Toastalert = ({
   save = 'Delete',
   icons = true,
   onClose,
+  onModalHidden,
   onSave,
 }) => {
   return (
@@ -21,7 +22,17 @@ const Toastalert = ({
       transparent>
       <View style={styles.overlay}>
         <View style={styles.card}>
-          {icons && <Icons name="info" size={30} />}
+          {onModalHidden && (
+            <TouchableOpacity
+              onPress={onModalHidden}
+              activeOpacity={0.6}
+              style={styles.close}>
+              <Icons name="close" size={20} color={colors.colorBlack} />
+            </TouchableOpacity>
+          )}
+          {icons && (
+            <Icons name="info-outline" size={30} color={'hsl(35, 79%, 78%)'} />
+          )}
           <Texts style={styles.message}>{message}</Texts>
           <View style={styles.footer}>
             <TouchableOpacity
@@ -53,6 +64,14 @@ const styles = StyleSheet.create({
     padding: 20,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  close: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    backgroundColor: '#FFF',
+    padding: 10,
+    borderRadius: 50,
   },
   message: {
     fontSize: 16,

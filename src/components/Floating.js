@@ -6,7 +6,7 @@ import {colors} from '../utils';
 const Floating = props => {
   return (
     <TouchableOpacity {...props} activeOpacity={0.7} style={styles.floating}>
-      <Icons name="add" size={25} color={colors.colorBlue} />
+      <Icons name="add" size={25} color={colors.colorRed} />
     </TouchableOpacity>
   );
 };

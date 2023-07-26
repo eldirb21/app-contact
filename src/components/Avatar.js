@@ -8,33 +8,42 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import Texts from './Texts';
-import {colors} from '../utils';
+import {Func, colors} from '../utils';
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 import Toastalert from './Toastalert';
 
-const Avatar = ({title, loading, editable = false, avatar, size = 50}) => {
+const Avatar = ({
+  title,
+  loading,
+  editable = false,
+  onUpload = () => {},
+  avatar,
+  size = 50,
+}) => {
   const [ShowToast, setShowToast] = useState(false);
-  const handleCamera = async () => {
-    const result = await launchCamera({
-      mediaType: 'photo',
-      maxHeight: 100,
-      maxWidth: 100,
-      // includeBase64: true,
-    });
 
-    console.log(result.assets[0]);
+  const handleCamera = async () => {
+    handleImageOptions();
+    const result = await launchCamera(Func.options());
+    if (result.didCancel) {
+    } else if (result.error) {
+    } else {
+      let source = `data:image/png;base64,${result?.assets[0]?.base64}`;
+      onUpload(source);
+    }
   };
   const handleLibrary = async () => {
-    const result = await launchImageLibrary({
-      mediaType: 'photo',
-      maxHeight: 100,
-      maxWidth: 100,
-      // includeBase64: true,
-    });
-    console.log(result.assets[0]);
+    handleImageOptions();
+    const result = await launchImageLibrary(Func.options());
+    if (result.didCancel) {
+    } else if (result.error) {
+    } else {
+      let source = `data:image/png;base64,${result?.assets[0]?.base64}`;
+      onUpload(source);
+    }
   };
   const handleImageOptions = () => {
-    setShowToast(true);
+    setShowToast(!ShowToast);
   };
   return (
     <>
@@ -50,7 +59,7 @@ const Avatar = ({title, loading, editable = false, avatar, size = 50}) => {
                 },
                 styles.avatar,
               ]}>
-              <Texts style={styles.initialName}>{title}</Texts>
+              <Texts style={styles.initialName}>{title || '+'}</Texts>
             </View>
 
             {avatar !== undefined && avatar !== null && avatar !== 'N/A' && (
@@ -84,6 +93,7 @@ const Avatar = ({title, loading, editable = false, avatar, size = 50}) => {
       </TouchableOpacity>
 
       <Toastalert
+        onModalHidden={handleImageOptions}
         icons={false}
         message="Upload and attach photo."
         close="Upload"

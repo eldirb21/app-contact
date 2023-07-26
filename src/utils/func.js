@@ -36,6 +36,14 @@ const Func = {
     }
     return errors;
   },
+  options() {
+    return {
+      mediaType: 'photo',
+      maxHeight: 100,
+      maxWidth: 100,
+      includeBase64: true,
+    };
+  },
 };
 
 export default Func;
