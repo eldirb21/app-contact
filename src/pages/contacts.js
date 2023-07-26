@@ -52,13 +52,13 @@ const Contacts = props => {
     setState({
       ...state,
       ShowForm: !state.ShowForm,
-      ItemSelect: item ? item : null,
+      ItemSelect: item ? item : {},
     });
   };
-  const handleConfirm = (data, type) => {
+  const handleConfirm = (data, type, isEdit) => {
     if (type === 'reset') {
     } else if (type === 'submit') {
-      if (state.ItemSelect !== null) {
+      if (isEdit) {
         props.editContact(_.EDIT_CONTACT_LOAD, data);
       } else {
         props.addContact(_.ADD_CONTACT_LOAD, data);

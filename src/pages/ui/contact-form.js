@@ -3,19 +3,26 @@ import {StyleSheet, Modal, View, TouchableOpacity} from 'react-native';
 import {Appbar, Avatar, Textinputs, Texts} from '../../components';
 import Func from '../../utils/func';
 import {colors} from '../../utils';
-
-const ContactForm = ({visible, onClose, selectItem, onSave, ...props}) => {
+let initState = {
+  firstName: '',
+  lastName: '',
+  age: '',
+  photo: null,
+};
+const ContactForm = ({visible, onClose, selectItem, onSave}) => {
   const [errors, seterrors] = useState({});
-  const [inputs, setinputs] = useState({
-    firstName: '',
-    lastName: '',
-    age: '',
-    photo: '',
-  });
+  const [inputs, setinputs] = useState(initState);
+  const [isEdit, setisEdit] = useState(false);
 
   useEffect(() => {
-    if (selectItem !== null) {
+    if (Object.keys(selectItem).length !== 0) {
       setinputs(selectItem);
+      setisEdit(true);
+      seterrors({});
+    } else {
+      setinputs(initState);
+      seterrors({});
+      setisEdit(false);
     }
   }, [selectItem]);
 
@@ -27,17 +34,15 @@ const ContactForm = ({visible, onClose, selectItem, onSave, ...props}) => {
   const handleActions = type => {
     let validate = Func.formValidate(inputs);
     seterrors(validate);
-    if (Object.keys(validate).length === 0) {
-      switch (type) {
-        case 'reset':
-          onClose(inputs, 'reset');
-          break;
-        case 'submit':
-          onSave(inputs, 'submit');
-          break;
-        default:
-          break;
-      }
+    switch (type) {
+      case 'reset':
+        onClose(inputs, 'reset');
+        break;
+      case 'submit':
+        Object.keys(validate).length === 0 && onSave(inputs, 'submit', isEdit);
+        break;
+      default:
+        break;
     }
   };
   return (

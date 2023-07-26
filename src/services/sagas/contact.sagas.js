@@ -47,7 +47,6 @@ function* editContactReceived({payload}) {
   try {
     const url = `contact/${payload.id}`;
     const res = yield call(apiPUT, url, payload);
-    console.log(res, 'editContactReceived');
     if (res?.response?.status >= 400) {
       yield put({
         type: _.EDIT_CONTACT_FAILED,
