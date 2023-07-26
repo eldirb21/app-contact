@@ -15,7 +15,7 @@ This application uses several tools/libraries, including:
 - [Vector icons](https://oblador.github.io/react-native-vector-icons),
 - [Prop-types](https://www.npmjs.com/package/prop-types)
 
-## Screen App Test
+## Screens App Test
 
 <p align="center">
     <img src="AppScreens/contact-list.png" width="30%"> 
