@@ -14,8 +14,8 @@ const Floating = props => {
 const styles = StyleSheet.create({
   floating: {
     position: 'absolute',
-    bottom: 10,
-    right: 20,
+    bottom: 25,
+    right: 25,
     backgroundColor: colors.colorWhite,
     borderRadius: 25,
     width: 50,
