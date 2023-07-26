@@ -5,9 +5,12 @@ function* getContactReceived() {
   try {
     const res = yield call(apiGET, 'contact');
     if (res?.data !== undefined) {
+      let reversedArr = res?.data?.map((item, index, arr) => {
+        return arr[arr.length - 1 - index];
+      });
       yield put({
         type: _.GET_CONTACT_SUCCESS,
-        payload: res?.data,
+        payload: reversedArr,
         loading: false,
       });
     }

@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500',
     marginTop: 10,
+    textAlign: 'center',
   },
   footer: {
     flexDirection: 'row',
