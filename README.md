@@ -15,6 +15,17 @@ This application uses several tools/libraries, including:
 - [Vector icons](https://oblador.github.io/react-native-vector-icons),
 - [Prop-types](https://www.npmjs.com/package/prop-types)
 
+## Screen App Test
+
+<p align="center">
+    <img src="AppScreens/contact-list.png" width="30%"> 
+    <img src="AppScreens/contact-add.png" width="30%"> 
+    <img src="AppScreens/upload-img.png" width="30%" >
+    <img src="AppScreens/contact-edit.png" width="30%" >
+    <img src="AppScreens/toast-alert.png" width="30%" >
+    <img src="AppScreens/submit-alert.png" width="30%" >
+</p>
+
 ## Getting Started
 
 > **Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
@@ -60,14 +71,3 @@ If everything is set up _correctly_, you should see your new app running in your
 ### Congratulations! :tada:
 
 You've successfully run.
-
-## Screen App Test
-
-<p align="center">
-    <img src="AppScreens/contact-list.png" width="30%"> 
-    <img src="AppScreens/contact-add.png" width="30%"> 
-    <img src="AppScreens/upload-img.png" width="30%" >
-    <img src="AppScreens/contact-edit.png" width="30%" >
-    <img src="AppScreens/toast-alert.png" width="30%" >
-    <img src="AppScreens/submit-alert.png" width="30%" >
-</p>
