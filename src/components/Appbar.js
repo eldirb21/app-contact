@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, TouchableOpacity, Platform} from 'react-native';
 import Icons from './Icons';
 import Texts from './Texts';
 import {colors} from '../utils';
@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     borderColor: colors.colorBorderGrey,
     flexDirection: 'row',
     alignItems: 'center',
+    marginTop: Platform.OS === 'ios' ? 35 : 0,
   },
   headbackBtn: {
     justifyContent: 'center',
